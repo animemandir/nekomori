@@ -28,7 +28,7 @@ function Directory() {
 
   return (
     <div className="directory-menu">
-      <CardDeck className="custom-deck">
+      <CardDeck className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 items-stretch m-0">
         {data.anime.map((anime) => (
           <SingleCard key={anime.id} anime={anime} />
         ))}

@@ -7,7 +7,7 @@ import HomePage from "./pages/homepage/homepage.component";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-gray-900 font-sans">
       <Header />
 
       <Switch>

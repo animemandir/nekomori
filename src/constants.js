@@ -10,7 +10,7 @@ query {
       hasNextPage
       perPage
     }
-    media(season: SPRING, seasonYear: 2021, sort: POPULARITY_DESC) {
+    media(season: SPRING,type: ANIME, seasonYear: 2021, sort: POPULARITY_DESC) {
       id
       status
       coverImage {

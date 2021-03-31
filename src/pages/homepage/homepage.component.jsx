@@ -8,7 +8,7 @@ import "./homepage.styles.scss";
 
 const HomePage = () => (
   <Container fluid className="my-4">
-    <div className="homepage">
+    <div className="homepage md:mx-9">
       <Directory />
     </div>
   </Container>

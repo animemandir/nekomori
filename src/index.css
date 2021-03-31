@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700;800&display=swap");
-body {
-  margin: 0;
-  font-family: "Overpass", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
