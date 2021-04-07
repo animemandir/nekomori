@@ -71,6 +71,11 @@
   }
 }
 
+.studio {
+  height: fit-content;
+  top: auto;
+}
+
 @media (max-width: 600px) {
   .custom-card {
     height: 250px;

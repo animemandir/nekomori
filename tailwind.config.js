@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      padding: {
+        "1/3": "33.33333%",
+        "2/3": "66.66667%",
+      },
       fontFamily: {
         sans: ["Overpass", "sans-serif"],
       },
@@ -11,5 +15,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };
