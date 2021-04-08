@@ -29,6 +29,7 @@ function Directory() {
             media(season: ${season},type: ANIME, seasonYear: 2021, sort: POPULARITY_DESC) {
               id
               status
+              episodes
               coverImage {
                 large
                 color

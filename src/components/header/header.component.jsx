@@ -23,14 +23,7 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="px-5 py-3">
       <Navbar.Brand href="#home">
-        <img
-          alt=""
-          src="/logo.svg"
-          width="38"
-          height="38"
-          className="d-inline-block align-top mr-3 logo"
-        />
-        <span className="mb-3">{season}</span>
+        <span className="">{season} 2021</span>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
