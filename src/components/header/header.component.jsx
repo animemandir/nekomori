@@ -18,6 +18,7 @@ import {
 
 function Header() {
   const season = useSelector((state) => state.navbar.season);
+
   const dispatch = useDispatch();
 
   return (

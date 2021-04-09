@@ -1,8 +1,8 @@
-const myState = {
+const INITIAL_STATE = {
   season: "SPRING",
 };
 
-const navbarReducer = (state = myState, action) => {
+const navbarReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "CHANGE_SEASON":
       return {

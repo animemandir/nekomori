@@ -52,7 +52,8 @@ function SingleCard(props) {
           <p className="text-left text-xs">Source • {props.anime.source}</p>
           <p
             dangerouslySetInnerHTML={createMarkup()}
-            className="text-left text-xs ep-desc mt-3"
+            className="text-left text-xs mt-3"
+            id="ep-desc"
           ></p>
         </div>
         <div className="bg-gray-700 text-black py-2 rounded-br-md">

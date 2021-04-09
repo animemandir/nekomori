@@ -25,3 +25,29 @@ export const changeSeasonToWinter = () => {
     payload: "WINTER",
   };
 };
+
+export const displayError = () => {
+  return {
+    type: "429",
+    payload: "429",
+  };
+};
+
+export const removeError = () => {
+  return {
+    type: "zero",
+    payload: "zero",
+  };
+};
+
+export const showModal = () => {
+  return {
+    type: showModal,
+  };
+};
+
+export const setShowModal = () => {
+  return {
+    type: setShowModal,
+  };
+};
