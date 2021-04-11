@@ -81,7 +81,7 @@ function Directory() {
     };
 
     fetchData();
-  });
+  }, [dispatch, season]);
 
   return (
     <div className="directory-menu">
