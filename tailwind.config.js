@@ -3,6 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontSize: { xs: ".65rem" },
       scale: { 101: "1.03" },
       padding: {
         "1/3": "33.33333%",

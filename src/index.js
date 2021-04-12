@@ -20,7 +20,7 @@ const store = createStore(
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <App classname="bg-gray-900" />
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

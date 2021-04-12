@@ -7,7 +7,7 @@ export function cardTitle(anime) {
       return (
         <div>
           <p className="text-left text-xs">{`${anime.episodes} Episodes aired on`}</p>
-          <div className="text-left text-lg font-bold ep-time">
+          <div className="text-left text-sm md:text-lg font-bold ep-time">
             {monthText(anime.startDate.year, anime.startDate.month, anime.startDate.day)}
           </div>
         </div>
@@ -23,7 +23,7 @@ export function cardTitle(anime) {
       return (
         <div>
           <p className="text-left text-xs">{`Anime airing on`}</p>
-          <div className="text-left text-lg font-bold ep-time">
+          <div className="text-left text-sm md:text-lg font-bold ep-time">
             {monthText(anime.startDate.year, anime.startDate.month, anime.startDate.day)}
           </div>
         </div>

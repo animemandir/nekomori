@@ -4,15 +4,18 @@ import { Switch, Route } from "react-router-dom";
 
 import Header from "./components/header/header.component";
 import HomePage from "./pages/homepage/homepage.component";
+import BottomNavbar from "./components/bottom-navbar/bottom-navbar.component";
 
 function App() {
   return (
-    <div className="App bg-gray-900 font-sans">
+    <div className="App font-sans">
       <Header />
 
       <Switch>
         <Route exact path="/" component={HomePage} />
       </Switch>
+
+      <BottomNavbar />
     </div>
   );
 }
