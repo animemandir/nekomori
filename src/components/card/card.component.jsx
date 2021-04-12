@@ -18,7 +18,7 @@ function SingleCard(props) {
   }
 
   return (
-    <div className="bg-gray-800 h-60 md:h-64 flex w-auto rounded-md text-gray-300 overflow-hidden transition duration-300 ease-in-out transform hover:scale-101 hover:shadow-2xl">
+    <div className="bg-gray-800 h-60 md:h-64 flex w-auto rounded-md text-gray-300 overflow-hidden transition duration-300 ease-in-out transform hover:scale-101 hover:shadow-2xl elementToFadeInAndOut">
       {/* Card Image */}
       <div className="relative w-64 aspect-w-16 aspect-h-1">
         <img
