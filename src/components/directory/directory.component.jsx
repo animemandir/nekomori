@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as Constants from "../../constants";
+import getQuery, * as Constants from "../../constants";
 
 import axios from "axios";
 
@@ -14,6 +14,9 @@ import SkeletonLoader from "../skeleton-loader/skeleton-loader.component";
 
 function Directory() {
   const season = useSelector((state) => state.navbar.season);
+  const status = useSelector((state) => state.navbar.status);
+  const year = useSelector((state) => state.navbar.year);
+
   const error = useSelector((state) => state.errors.errorMessage);
   const [data, setData] = useState({ anime: [], loading: true });
   const dispatch = useDispatch();
@@ -24,53 +27,7 @@ function Directory() {
       // Call GraphQL API
       await axios
         .post(Constants.GRAPHQL_API, {
-          query: `query {
-          Page(page: 1, perPage: 15) {
-            pageInfo {
-              total
-              currentPage
-              lastPage
-              hasNextPage
-              perPage
-            }
-            media(season: ${season},type: ANIME, seasonYear: 2021, sort: POPULARITY_DESC) {
-              id
-              status
-              episodes
-              coverImage {
-                large
-                color
-              }
-              studios {
-                edges {
-                  id
-                  isMain @include(if: true)
-                  node {
-                    name
-                  }
-                }
-              }
-              source
-              description
-              nextAiringEpisode {
-                id
-                episode
-                timeUntilAiring
-              }
-              title {
-                english
-                romaji
-              }
-              startDate {
-                year
-                month
-                day
-              }
-              genres
-            }
-          }
-        }
-        `,
+          query: getQuery(year, season, status),
         })
         .then(function (response) {
           // Update Component State
@@ -83,11 +40,11 @@ function Directory() {
     };
 
     fetchData();
-  }, [dispatch, season]);
+  }, [dispatch, year, season, status]);
 
   const loaderArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   return (
-    <div className="directory-menu">
+    <div className="directory-menu pb-5">
       {(() => {
         switch (error) {
           case "429":

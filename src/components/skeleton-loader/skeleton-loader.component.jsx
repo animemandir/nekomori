@@ -15,16 +15,16 @@ function SkeletonLoader(props) {
       {/* Card Desc */}
       <div className="w-full md:max-w-full flex flex-col justify-between">
         <div className="mx-3 mt-3 mb-2">
-          <div class="flex-1 space-y-4 py-1 animate-pulse">
-            <div class="space-y-2">
-              <div class="h-4 bg-gray-700 rounded w-2/5"></div>
-              <div class="h-4 bg-gray-700 rounded w-3/5"></div>
-              <div class="h-4 bg-gray-700 rounded w-2/5"></div>
+          <div className="flex-1 space-y-4 py-1 animate-pulse">
+            <div className="space-y-2">
+              <div className="h-4 bg-gray-700 rounded w-2/5"></div>
+              <div className="h-4 bg-gray-700 rounded w-3/5"></div>
+              <div className="h-4 bg-gray-700 rounded w-2/5"></div>
             </div>
-            <div class="space-y-3 mt-4">
-              <div class="h-4 bg-gray-700 rounded w-full"></div>
-              <div class="h-4 bg-gray-700 rounded w-full"></div>
-              <div class="h-4 bg-gray-700 rounded w-full"></div>
+            <div className="space-y-3 mt-4">
+              <div className="h-4 bg-gray-700 rounded w-full"></div>
+              <div className="h-4 bg-gray-700 rounded w-full"></div>
+              <div className="h-4 bg-gray-700 rounded w-full"></div>
             </div>
           </div>
         </div>

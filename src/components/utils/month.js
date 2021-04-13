@@ -7,9 +7,11 @@ export function monthText(year, month, day) {
   } else if (year && month) {
     dateLast = `${year}-${month}`;
     format = { year: "numeric", month: "long" };
-  } else {
+  } else if (year) {
     dateLast = `${year}`;
     format = { year: "numeric" };
+  } else {
+    return "TBA";
   }
 
   var dateConvert = new Date(dateLast).toLocaleDateString("en-US", format);

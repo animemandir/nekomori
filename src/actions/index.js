@@ -26,6 +26,20 @@ export const changeSeasonToWinter = () => {
   };
 };
 
+export const changeSeasonToTBA = () => {
+  return {
+    type: "CHANGE_SEASON_TBA",
+    payload: "NOT_YET_RELEASED",
+  };
+};
+
+export const changeYear = (year) => {
+  return {
+    type: "CHANGE_YEAR",
+    payload: year,
+  };
+};
+
 export const displayError = () => {
   return {
     type: "429",
