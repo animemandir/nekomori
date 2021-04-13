@@ -19,21 +19,21 @@ export default function MyListbox() {
   }, [dispatch, selectedYear]);
 
   return (
-    <div className="flex items-center justify-center p-12">
-      <div className="w-full max-w-xs mx-auto">
+    <div className="flex items-center justify-center pb-3">
+      <div className="w-full max-w-full mx-auto">
         <Listbox as="div" className="space-y-1" value={selectedYear} onChange={setSelectedYear}>
           {({ open }) => (
-            <>
-              <Listbox.Label className="block text-sm leading-5 font-medium text-gray-700">
-                Select Year
+            <div className="flex justify-between items-center">
+              <Listbox.Label className="text-lg leading-5 pt-2 font-bold text-gray-200">
+                Nekomori
               </Listbox.Label>
-              <div className="relative">
+              <div className="relative w-32">
                 <span className="inline-block w-full rounded-md shadow-sm">
-                  <Listbox.Button className="cursor-default relative w-full rounded-md border border-gray-300 bg-white pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  <Listbox.Button className="cursor-default relative w-full rounded-md border-none text-white border-gray-700 bg-gray-800 pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-gray-800 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                     <span className="block truncate">{selectedYear}</span>
                     <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                       <svg
-                        className="h-5 w-5 text-gray-400"
+                        className="h-5 w-5 text-white"
                         viewBox="0 0 20 20"
                         fill="none"
                         stroke="currentColor"
@@ -54,18 +54,18 @@ export default function MyListbox() {
                   leave="transition ease-in duration-100"
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
-                  className="absolute mt-1 w-full rounded-md bg-white shadow-lg z-50"
+                  className="absolute mt-1 w-full rounded-md bg-gray-800 shadow-lg z-50"
                 >
                   <Listbox.Options
                     static
-                    className="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5 bg-white"
+                    className="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5 bg-gray-800 shadow-2xl"
                   >
                     {years.map((year) => (
                       <Listbox.Option key={year} value={year}>
                         {({ selected, active }) => (
                           <div
                             className={`${
-                              active ? "text-white bg-blue-600" : "text-gray-900"
+                              active ? "text-gray-100 bg-gray-700" : "text-gray-400"
                             } cursor-default select-none relative py-2 pl-8 pr-4`}
                           >
                             <span
@@ -78,7 +78,7 @@ export default function MyListbox() {
                             {selected && (
                               <span
                                 className={`${
-                                  active ? "text-white" : "text-blue-600"
+                                  active ? "text-white" : "text-gray-100"
                                 } absolute inset-y-0 left-0 flex items-center pl-1.5`}
                               >
                                 <svg
@@ -102,7 +102,7 @@ export default function MyListbox() {
                   </Listbox.Options>
                 </Transition>
               </div>
-            </>
+            </div>
           )}
         </Listbox>
       </div>

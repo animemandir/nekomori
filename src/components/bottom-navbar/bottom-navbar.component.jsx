@@ -9,6 +9,7 @@ import {
   changeSeasonToSummer,
   changeSeasonToFall,
   changeSeasonToTBA,
+  changeSeasonToAiring,
 } from "../../actions";
 
 import "./bottom-navbar.styles.scss";
@@ -84,7 +85,7 @@ export default function BottomNavbar() {
         ) : (
           <nav className="mx-2.5 my-2 py-2 bg-gray-800 rounded flex-1 navi-left z-10">
             <ul className="flex justify-evenly">
-              <li>
+              {/* <li>
                 <Link
                   // onClick={() => {
                   //   dispatch(changeSeasonToWinter());
@@ -95,7 +96,7 @@ export default function BottomNavbar() {
                   <i className="bi bi-archive text-xl"></i>
                   <span className="text-xs">Archive</span>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   onClick={() => {
@@ -112,11 +113,11 @@ export default function BottomNavbar() {
               </li>
               <li>
                 <Link
-                  // onClick={() => {
-                  //   dispatch(changeSeasonToSummer());
-                  // }}
+                  onClick={() => {
+                    dispatch(changeSeasonToAiring());
+                  }}
                   to="#"
-                  className={`flex flex-col notActive`}
+                  className={`flex flex-col ${status === "RELEASING" ? "isActive" : "notActive"}`}
                 >
                   <i className="bi bi-calendar text-xl"></i>
                   <span className="text-xs">Airing</span>

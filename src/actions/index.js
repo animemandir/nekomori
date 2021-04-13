@@ -33,6 +33,13 @@ export const changeSeasonToTBA = () => {
   };
 };
 
+export const changeSeasonToAiring = () => {
+  return {
+    type: "RELEASING",
+    payload: "RELEASING",
+  };
+};
+
 export const changeYear = (year) => {
   return {
     type: "CHANGE_YEAR",

@@ -9,7 +9,7 @@ import MyListbox from "../../components/listbox/listbox-component";
 import "./homepage.styles.scss";
 
 const HomePage = () => (
-  <Container fluid className="my-4">
+  <Container fluid className="mt-3 mb-5">
     <MyListbox />
     <div className="homepage md:mx-9">
       <Directory />

@@ -20,6 +20,11 @@ const navbarReducer = (state = INITIAL_STATE, action) => {
         status: action.payload,
       };
 
+    case "RELEASING":
+      return {
+        ...state,
+        status: action.payload,
+      };
     case "CHANGE_YEAR":
       return {
         ...state,

@@ -15,8 +15,14 @@ export function cardTitle(anime) {
     case "RELEASING":
       return (
         <div>
-          <p className="text-left text-xs">{`Ep ${anime.nextAiringEpisode.episode} airing in`}</p>
-          <Time seconds={anime.nextAiringEpisode.timeUntilAiring} />
+          <p className="text-left text-xs">{`Ep ${
+            anime.nextAiringEpisode ? anime.nextAiringEpisode.episode : "0"
+          } airing in`}</p>
+          {anime.nextAiringEpisode ? (
+            <Time seconds={anime.nextAiringEpisode.timeUntilAiring} />
+          ) : (
+            <div className="text-left text-sm md:text-lg font-bold ep-time">TBA</div>
+          )}
         </div>
       );
     case "NOT_YET_RELEASED":
