@@ -10,7 +10,9 @@ import "./homepage.styles.scss";
 
 const HomePage = () => (
   <Container fluid className="mt-3 mb-5">
-    <MyListbox />
+    <div className="lg:hidden">
+      <MyListbox />
+    </div>
     <div className="homepage md:mx-9">
       <Directory />
     </div>

@@ -2,9 +2,7 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-
+import MyListBox from "../listbox/listbox-component";
 // import { ReactComponent as Logo } from "../../logo.svg";
 
 import "./header.styles.scss";
@@ -14,54 +12,111 @@ import {
   changeSeasonToSpring,
   changeSeasonToSummer,
   changeSeasonToFall,
+  changeSeasonToTBA,
+  changeSeasonToAiring,
+  changeToReviews,
 } from "../../actions";
+import { Link } from "react-router-dom";
 
 function Header() {
   const season = useSelector((state) => state.navbar.season);
+  const status = useSelector((state) => state.navbar.status);
+  const year = useSelector((state) => state.navbar.year);
 
   const dispatch = useDispatch();
 
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      bg="dark"
-      variant="dark"
-      className="px-5 py-3 hidden lg:flex bg-gray-800"
-    >
-      <Navbar.Brand href="#home">
-        <span className="">{season} 2021</span>
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
-          <Nav.Link
-            onClick={() => dispatch(changeSeasonToWinter())}
-            className={season === "WINTER" ? "isActive" : "notActive"}
-          >
-            Winter 2021
-          </Nav.Link>
-          <Nav.Link
-            onClick={() => dispatch(changeSeasonToSpring())}
-            className={season === "SPRING" ? "isActive" : "notActive"}
-          >
-            Spring 2021
-          </Nav.Link>
-          <Nav.Link
-            onClick={() => dispatch(changeSeasonToSummer())}
-            className={season === "SUMMER" ? "isActive" : "notActive"}
-          >
-            Summer 2021
-          </Nav.Link>
-          <Nav.Link
-            onClick={() => dispatch(changeSeasonToFall())}
-            className={season === "FALL" ? "isActive" : "notActive"}
-          >
-            Fall 2021
-          </Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <div className="hidden lg:flex h-16 text-gray-500 bg-gray-800 justify-between items-center py-5 px-12">
+      <div>
+        <span className="text-2xl text-gray-100 font-bold">Nekomori</span>
+      </div>
+      <div className="flex">
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${
+            season === "WINTER" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToWinter());
+          }}
+        >
+          WINTER <br /> {year}
+        </Link>
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${
+            season === "SPRING" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToSpring());
+          }}
+        >
+          SPRING <br /> {year}
+        </Link>
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${
+            season === "SUMMER" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToSummer());
+          }}
+        >
+          SUMMER <br /> {year}
+        </Link>
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${season === "FALL" ? "isActive" : "notActive"} cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToFall());
+          }}
+        >
+          FALL <br /> {year}
+        </Link>
+      </div>
+      <div className="flex">
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${
+            status === "NOT_YET_RELEASED" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToTBA());
+          }}
+        >
+          <i className="bi bi-chevron-double-right text-xl"></i> <br />
+          <span className="text-xs">TBA</span>
+        </Link>
+        <Link
+          to="/"
+          className={`mx-3 text-sm ${
+            status === "RELEASING" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeSeasonToAiring());
+          }}
+        >
+          <i className="bi bi-calendar text-xl"></i> <br />
+          <span className="text-xs">Airing</span>
+        </Link>
+        <Link
+          to="/reviews"
+          className={`mx-3 text-sm ${
+            season === "REVIEWS" ? "isActive" : "notActive"
+          } cursor-pointer`}
+          onClick={() => {
+            dispatch(changeToReviews());
+          }}
+        >
+          <i className="bi bi-newspaper text-xl"></i>
+          <br />
+          <span className="text-xs">Reviews</span>
+        </Link>
+        <div className="hidden lg:flex">
+          <MyListBox />
+        </div>
+      </div>
+    </div>
   );
 }
 

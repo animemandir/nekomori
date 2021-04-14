@@ -19,17 +19,17 @@ export default function MyListbox() {
   }, [dispatch, selectedYear]);
 
   return (
-    <div className="flex items-center justify-center pb-3">
+    <div className="flex items-center justify-center pb-3 lg:pb-0">
       <div className="w-full max-w-full mx-auto">
         <Listbox as="div" className="space-y-1" value={selectedYear} onChange={setSelectedYear}>
           {({ open }) => (
             <div className="flex justify-between items-center">
-              <Listbox.Label className="text-lg leading-5 pt-2 font-bold text-gray-200">
+              <Listbox.Label className="text-lg leading-5 pt-2 font-bold text-gray-200 lg:hidden">
                 Nekomori
               </Listbox.Label>
               <div className="relative w-32">
                 <span className="inline-block w-full rounded-md shadow-sm">
-                  <Listbox.Button className="cursor-default relative w-full rounded-md border-none text-white border-gray-700 bg-gray-800 pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-gray-800 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  <Listbox.Button className="cursor-default relative w-full rounded-md border-none text-white border-gray-700 lg:bg-gray-700 bg-gray-800 pl-3 pr-10 py-2 text-left focus:outline-none focus:shadow-outline-blue focus:border-gray-800 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                     <span className="block truncate">{selectedYear}</span>
                     <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                       <svg
@@ -54,11 +54,11 @@ export default function MyListbox() {
                   leave="transition ease-in duration-100"
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
-                  className="absolute mt-1 w-full rounded-md bg-gray-800 shadow-lg z-50"
+                  className="absolute mt-1 w-full rounded-md lg:bg-gray-700 bg-gray-800 shadow-lg z-50"
                 >
                   <Listbox.Options
                     static
-                    className="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5 bg-gray-800 shadow-2xl"
+                    className="max-h-60 rounded-md py-1 text-base leading-6 shadow-xs overflow-auto focus:outline-none sm:text-sm sm:leading-5  bg-gray-800 shadow-2xl"
                   >
                     {years.map((year) => (
                       <Listbox.Option key={year} value={year}>

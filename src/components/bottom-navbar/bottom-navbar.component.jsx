@@ -10,6 +10,7 @@ import {
   changeSeasonToFall,
   changeSeasonToTBA,
   changeSeasonToAiring,
+  changeToReviews,
 } from "../../actions";
 
 import "./bottom-navbar.styles.scss";
@@ -37,10 +38,10 @@ export default function BottomNavbar() {
                   onClick={() => {
                     dispatch(changeSeasonToWinter());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${season === "WINTER" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-snow2 text-xl"></i>
+                  <i className="bi bi-snow2 text-lg"></i>
                   <span className="text-xs">Winter</span>
                 </Link>
               </li>
@@ -49,10 +50,10 @@ export default function BottomNavbar() {
                   onClick={() => {
                     dispatch(changeSeasonToSpring());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${season === "SPRING" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-tree-fill text-xl"></i>
+                  <i className="bi bi-tree-fill text-lg"></i>
                   <span className="text-xs">Spring</span>
                 </Link>
               </li>
@@ -61,10 +62,10 @@ export default function BottomNavbar() {
                   onClick={() => {
                     dispatch(changeSeasonToSummer());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${season === "SUMMER" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-brightness-high-fill text-xl"></i>
+                  <i className="bi bi-brightness-high-fill text-lg"></i>
                   <span className="text-xs">Summer</span>
                 </Link>
               </li>
@@ -73,10 +74,10 @@ export default function BottomNavbar() {
                   onClick={() => {
                     dispatch(changeSeasonToFall());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${season === "FALL" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-thermometer-low text-xl"></i>
+                  <i className="bi bi-thermometer-low text-lg"></i>
                   <span className="text-xs">Fall</span>
                 </Link>
               </li>
@@ -85,29 +86,17 @@ export default function BottomNavbar() {
         ) : (
           <nav className="mx-2.5 my-2 py-2 bg-gray-800 rounded flex-1 navi-left z-10">
             <ul className="flex justify-evenly">
-              {/* <li>
-                <Link
-                  // onClick={() => {
-                  //   dispatch(changeSeasonToWinter());
-                  // }}
-                  to="#"
-                  className={`flex flex-col notActive`}
-                >
-                  <i className="bi bi-archive text-xl"></i>
-                  <span className="text-xs">Archive</span>
-                </Link>
-              </li> */}
               <li>
                 <Link
                   onClick={() => {
                     dispatch(changeSeasonToTBA());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${
                     status === "NOT_YET_RELEASED" ? "isActive" : "notActive"
                   }`}
                 >
-                  <i className="bi bi-chevron-double-right text-xl"></i>
+                  <i className="bi bi-clock-fill text-lg"></i>
                   <span className="text-xs">TBA</span>
                 </Link>
               </li>
@@ -116,23 +105,24 @@ export default function BottomNavbar() {
                   onClick={() => {
                     dispatch(changeSeasonToAiring());
                   }}
-                  to="#"
+                  to="/"
                   className={`flex flex-col ${status === "RELEASING" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-calendar text-xl"></i>
+                  <i className="bi bi-calendar text-lg"></i>
                   <span className="text-xs">Airing</span>
                 </Link>
               </li>
-              <li>
+              <li
+                onClick={() => {
+                  dispatch(changeToReviews());
+                }}
+              >
                 <Link
-                  // onClick={() => {
-                  //   dispatch(changeSeasonToFall());
-                  // }}
-                  to="#"
-                  className={`flex flex-col notActive`}
+                  to="/reviews"
+                  className={`flex flex-col ${season === "REVIEWS" ? "isActive" : "notActive"}`}
                 >
-                  <i className="bi bi-gear-fill text-xl"></i>
-                  <span className="text-xs">Settings</span>
+                  <i className="bi bi-newspaper text-lg"></i>
+                  <span className="text-xs">Reviews</span>
                 </Link>
               </li>
             </ul>
@@ -143,7 +133,7 @@ export default function BottomNavbar() {
           onClick={() => navStateChange()}
         >
           <button className="h-full flex items-center">
-            <i className="bi bi-list text-5xl"></i>
+            <i className="bi bi-chevron-right"></i>
           </button>
         </div>
       </div>

@@ -4,7 +4,9 @@ import "./skeleton-loader.styles.scss";
 
 function SkeletonLoader(props) {
   return (
-    <div className="bg-gray-800 h-60 md:h-64 flex w-auto rounded-md text-gray-300 overflow-hidden elementToFadeInAndOut">
+    <div
+      className={`bg-gray-800 ${props.height} md:h-64 flex w-auto rounded-md text-gray-300 overflow-hidden elementToFadeInAndOut`}
+    >
       {/* Card Image */}
       <div className="relative w-64 aspect-w-16 aspect-h-1 animate-pulse">
         <div className="object-cover rounded-l-md bg-white"></div>
@@ -21,11 +23,15 @@ function SkeletonLoader(props) {
               <div className="h-4 bg-gray-700 rounded w-3/5"></div>
               <div className="h-4 bg-gray-700 rounded w-2/5"></div>
             </div>
-            <div className="space-y-3 mt-4">
-              <div className="h-4 bg-gray-700 rounded w-full"></div>
-              <div className="h-4 bg-gray-700 rounded w-full"></div>
-              <div className="h-4 bg-gray-700 rounded w-full"></div>
-            </div>
+            {props.height === "h-60" ? (
+              <div className="space-y-3 mt-4">
+                <div className="h-4 bg-gray-700 rounded w-full"></div>
+                <div className="h-4 bg-gray-700 rounded w-full"></div>
+                <div className="h-4 bg-gray-700 rounded w-full"></div>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
         <div className="bg-gray-700 h-9 text-black py-2 rounded-br-md"></div>

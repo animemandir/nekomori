@@ -40,6 +40,13 @@ export const changeSeasonToAiring = () => {
   };
 };
 
+export const changeToReviews = () => {
+  return {
+    type: "REVIEWS",
+    payload: "REVIEWS",
+  };
+};
+
 export const changeYear = (year) => {
   return {
     type: "CHANGE_YEAR",

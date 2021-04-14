@@ -23,6 +23,7 @@ const navbarReducer = (state = INITIAL_STATE, action) => {
     case "RELEASING":
       return {
         ...state,
+        season: null,
         status: action.payload,
       };
     case "CHANGE_YEAR":
@@ -30,7 +31,12 @@ const navbarReducer = (state = INITIAL_STATE, action) => {
         ...state,
         year: action.payload,
       };
-
+    case "REVIEWS":
+      return {
+        ...state,
+        status: null,
+        season: action.payload,
+      };
     default:
       return state;
   }
