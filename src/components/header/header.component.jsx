@@ -28,7 +28,15 @@ function Header() {
   return (
     <div className="hidden lg:flex h-16 text-gray-500 bg-gray-800 justify-between items-center py-5 px-12">
       <div>
-        <span className="text-2xl text-gray-100 font-bold">Nekomori</span>
+        <Link
+          to="/"
+          onClick={() => {
+            dispatch(changeSeasonToWinter());
+          }}
+          className="text-2xl text-gray-100 font-bold cursor-pointer no-underline hover:text-gray-200"
+        >
+          Nekomori
+        </Link>
       </div>
       <div className="flex">
         <Link

@@ -133,7 +133,7 @@ export default function BottomNavbar() {
           onClick={() => navStateChange()}
         >
           <button className="h-full flex items-center">
-            <i className="bi bi-chevron-right"></i>
+            <i className="bi bi-chevron-left"></i>
           </button>
         </div>
       </div>

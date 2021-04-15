@@ -2,7 +2,7 @@ import React from "react";
 
 function ReviewCard(props) {
   function getName() {
-    return props.review.media.title
+    return props.review.media.title.english
       ? props.review.media.title.english
       : props.review.media.title.romaji;
   }
